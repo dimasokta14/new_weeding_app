@@ -1,0 +1,18 @@
+{
+	"workbench.startupEditor": "newUntitledFile",
+	"workbench.statusBar.visible": true,
+	"editor.minimap.enabled": false,
+	"breadcrumbs.enabled": true,
+	"explorer.confirmDelete": false,
+	"editor.wordWrap": "on",
+	"files.autoSave": "off",
+	"editor.codeActionsOnSave": null,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"explorer.confirmDragAndDrop": false,
+	"autoimport.doubleQuotes": true,
+	"go.formatTool": "goimports",
+	"workbench.editor.pinnedTabSizing": "shrink",
+	"diffEditor.ignoreTrimWhitespace": true,
+	"prettier.useTabs": true
+}
