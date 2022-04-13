@@ -114,7 +114,7 @@ const CountDownMap = ({ pos_section }) => {
 					alignItems: "center",
 				}}
 			>
-				<Map />
+				{/* <Map /> */}
 				<StyledButtonCalendar
 					href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20220508T020000Z/20220508T050000Z&text=Praatfike+%26+Ratna+Wedding&details=Praatfika+%26+Ratna+Wedding+on+Sunday,+08+May+2022&location=Jl.%20Pendem%20Raya%20RT.%2002%20/%20RW.%2006%20Dusun,%20Jl.%20Pendem%20Raya%20Dusun%20II,%20Jarum,%20Kec.%20Bayat,%20Kabupaten%20Klaten,%20Jawa%20Tengah%2057462"
 					target="_blank"
