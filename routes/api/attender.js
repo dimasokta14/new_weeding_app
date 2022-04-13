@@ -2,7 +2,7 @@
 var { Router } = require("express");
 // Attender Model
 // import Attenders from "../../models/attenders";
-var Attenders = require("../../models/attenders");
+var Attenders = require("../../models/Attenders");
 
 const router = Router();
 
