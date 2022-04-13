@@ -16,7 +16,7 @@ const RsvpProvider = ({ children }) => {
 	const getAttenders = () => {
 		try {
 			axios
-				.get("http://localhost:8080/api/attenders")
+				.get("https://wedding-pra-ratna.herokuapp.com/api/attenders")
 				.then((res) => setRsvpLists(res?.data));
 		} catch (error) {
 			console.error(error);
@@ -26,7 +26,7 @@ const RsvpProvider = ({ children }) => {
 	const postAttenders = async (data) => {
 		try {
 			await axios
-				.post("http://localhost:8080/api/attenders", data)
+				.post("https://wedding-pra-ratna.herokuapp.com/api/attenders", data)
 				.then((res) => console.log(res));
 		} catch (error) {
 			console.log(error);
