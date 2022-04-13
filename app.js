@@ -3,7 +3,7 @@ var mongoose = require("mongoose");
 var path = require("path");
 var cors = require("cors");
 var bodyParser = require("body-parser");
-var morgan = require("morgan");
+// var morgan = require("morgan");
 var config = require("./config");
 
 // routes
@@ -17,7 +17,7 @@ const app = express();
 // CORS Middleware
 app.use(cors());
 // Logger Middleware
-app.use(morgan("dev"));
+// app.use(morgan("dev"));
 // Bodyparser Middleware
 app.use(bodyParser.json());
 
