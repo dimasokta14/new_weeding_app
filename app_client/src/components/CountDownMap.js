@@ -11,8 +11,6 @@ import {
 	ScaleUpImageDecorAnimation,
 } from "../helpers/animation";
 import { animated, useSpring } from "react-spring";
-import mapboxgl from "mapbox-gl";
-import ReactTooltip from "react-tooltip";
 
 const StyledButtonCalendar = styled.a`
 	background-color: #eb7b8b;
@@ -88,8 +86,6 @@ const WeddingTimer = ({ expiryTimestamp }) => {
 };
 
 const CountDownMap = ({ pos_section }) => {
-	mapboxgl.accessToken =
-		"pk.eyJ1IjoiZGltYXNva3RhMTQiLCJhIjoiY2tqeTMxcXU2MDAxNDJ3bHExcjN5MGNlciJ9.6z10085mzokFoSyIysGnTw";
 	const time = new Date(2022, 4, 8, 9);
 	time.setSeconds(time.getSeconds() + 600);
 
@@ -98,43 +94,6 @@ const CountDownMap = ({ pos_section }) => {
 		to: { opacity: 1 },
 		config: { duration: "1000" },
 		loop: false,
-	});
-
-	const mapContainer = useRef(null);
-	const map = useRef(null);
-	const tooltipRef = useRef(new mapboxgl.Popup({ offset: 15 }));
-	const [lng, setLng] = useState(110.6471676);
-	const [lat, setLat] = useState(-7.8023177);
-	const [zoom, setZoom] = useState(12);
-
-	useEffect(() => {
-		if (map.current) return; // initialize map only once
-		map.current = new mapboxgl.Map({
-			container: mapContainer.current,
-			style: "mapbox://styles/mapbox/streets-v11",
-			center: [lng, lat],
-			zoom: zoom,
-		});
-		map.current.on("move", () => {
-			setLng(map.current.getCenter().lng.toFixed(4));
-			setLat(map.current.getCenter().lat.toFixed(4));
-			setZoom(map.current.getZoom().toFixed(2));
-		});
-		// map.current.addControl(new mapboxgl.FullscreenControl());
-		// const tooltipNode = document.createElement("div");
-		// ReactDOM.render(
-		// 	<>
-		// 		<p data-for="happyFace">Lokasi resepsi</p>
-		// 		{/* <ReactTooltip id="happyFace" type="info">
-		// 			<span>Show happy face</span>
-		// 		</ReactTooltip> */}
-		// 	</>,
-		// 	tooltipNode
-		// );
-		// tooltipRef.current
-		// 	.setLngLat([lng, lat])
-		// 	.setDOMContent(tooltipNode)
-		// 	.addTo(map);
 	});
 
 	return (
@@ -163,15 +122,6 @@ const CountDownMap = ({ pos_section }) => {
 					alignItems: "center",
 				}}
 			>
-				<div style={containerStyle}>
-					<div
-						ref={mapContainer}
-						className="map-container"
-						style={{
-							height: "300px",
-						}}
-					/>
-				</div>
 				<StyledButtonCalendar
 					href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20220508T020000Z/20220508T050000Z&text=Praatfike+%26+Ratna+Wedding&details=Praatfika+%26+Ratna+Wedding+on+Sunday,+08+May+2022&location=Jl.%20Pendem%20Raya%20RT.%2002%20/%20RW.%2006%20Dusun,%20Jl.%20Pendem%20Raya%20Dusun%20II,%20Jarum,%20Kec.%20Bayat,%20Kabupaten%20Klaten,%20Jawa%20Tengah%2057462"
 					target="_blank"
