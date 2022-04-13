@@ -1,4 +1,5 @@
-import { Schema, model } from "mongoose";
+// import { Schema, model } from "mongoose";
+var { Schema, model } = require("mongoose");
 
 // Create Schema
 const AttendersSchema = new Schema({
@@ -34,4 +35,5 @@ const AttendersSchema = new Schema({
 
 const Attenders = model("attenders", AttendersSchema);
 
-export default Attenders;
+// export default Attenders;
+module.exports = Attenders;

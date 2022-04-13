@@ -1,14 +1,14 @@
-import express from "express";
-import mongoose from "mongoose";
-import path from "path";
-import cors from "cors";
-import bodyParser from "body-parser";
-import morgan from "morgan";
-import config from "./config";
+var express = require("express");
+var mongoose = require("mongoose");
+var path = require("path");
+var cors = require("cors");
+var bodyParser = require("body-parser");
+var morgan = require("morgan");
+var config = require("./config");
 
 // routes
 // import authRoutes from "./routes/api/auth";
-import attenderRoutes from "./routes/api/attender";
+var attenderRoutes = require("./routes/api/attender");
 
 const { MONGO_URI, MONGO_DB_NAME } = config;
 
@@ -48,4 +48,5 @@ if (process.env.NODE_ENV === "production") {
 	});
 }
 
-export default app;
+// export default app;
+module.exports = app;

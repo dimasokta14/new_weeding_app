@@ -1,6 +1,8 @@
-import { Router } from "express";
+// import { Router } from "express";
+var { Router } = require("express");
 // Attender Model
-import Attenders from "../../models/attenders";
+// import Attenders from "../../models/attenders";
+var Attenders = require("../../models/attenders");
 
 const router = Router();
 
@@ -14,7 +16,6 @@ router.get("/", async (req, res) => {
 	try {
 		const attenders = await Attenders.find();
 		if (!attenders) throw Error("No attenderss");
-		console.log(attenders);
 		res.status(200).json(attenders);
 	} catch (e) {
 		res.status(400).json({ msg: e.message });
@@ -68,4 +69,4 @@ router.delete("/:id", async (req, res) => {
 	}
 });
 
-export default router;
+module.exports = router;
