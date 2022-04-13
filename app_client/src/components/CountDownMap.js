@@ -11,7 +11,7 @@ import {
 	ScaleUpImageDecorAnimation,
 } from "../helpers/animation";
 import { animated, useSpring } from "react-spring";
-import mapboxgl from "!mapbox-gl";
+import mapboxgl from "mapbox-gl";
 import ReactTooltip from "react-tooltip";
 
 const StyledButtonCalendar = styled.a`
