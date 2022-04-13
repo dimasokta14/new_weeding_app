@@ -5,6 +5,7 @@ import styled from "styled-components";
 import FlowerPattern from "../assets/floral.png";
 import AttendersComponent from "./AttendersComponent";
 import { useHistory } from "react-router-dom";
+import Copyright from "./Copyright";
 
 const MainContent = styled(Container)`
 	background: #f8fffb;
@@ -56,18 +57,25 @@ export const LetterPage = () => {
 								}}
 							>
 								<AttendersComponent />
+								<div
+									style={{
+										position: "absolute",
+										bottom: "20%",
+										// left: "25%",
+										margin: "auto",
+										display: "flex",
+										flexDirection: "column",
+										justifyContent: "center",
+										alignContent: "space-between",
+										minHeight: "100px",
+									}}
+								>
+									<Button color="teal" onClick={() => history.push("/main")}>
+										<p>Buka Undangan</p>
+									</Button>
+									<Copyright />
+								</div>
 							</Card.Content>
-							<div
-								style={{
-									position: "absolute",
-									bottom: "20%",
-									left: "25%",
-								}}
-							>
-								<Button color="teal" onClick={() => history.push("/main")}>
-									<p>Buka Undangan</p>
-								</Button>
-							</div>
 						</StyledCard>
 					</Grid.Column>
 				</Grid>

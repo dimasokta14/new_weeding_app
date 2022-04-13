@@ -24,7 +24,7 @@ const containerStyle = {
 const Map = () => {
 	const { isLoaded } = useJsApiLoader({
 		id: "google-map-script",
-		googleMapsApiKey: "YOUR_API_KEY",
+		googleMapsApiKey: "AIzaSyDMsSpha7BrD4Q2lu3JbA-49u8xRshqdCw",
 	});
 
 	const [map, setMap] = React.useState(null);
@@ -50,7 +50,8 @@ const Map = () => {
 			onLoad={onLoad}
 			onUnmount={onUnmount}
 		>
-			<Marker
+			<></>
+			{/* <Marker
 				onClick={this.handleClickMarker}
 				name="Lokasi Resepsi"
 				style={{ background: "black" }}
@@ -68,7 +69,7 @@ const Map = () => {
 				<div>
 					<h4>{this.state.selectedPlace.name}</h4>
 				</div>
-			</InfoWindow>
+			</InfoWindow> */}
 		</GoogleMap>
 	) : (
 		<></>

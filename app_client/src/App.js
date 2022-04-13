@@ -1,5 +1,5 @@
 import _ from "lodash";
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useMemo } from "react";
 import {
 	Container,
 	Grid,
@@ -46,6 +46,7 @@ import CountDownMap from "./components/CountDownMap";
 import { GiftModal } from "./components/GiftModal";
 import { rgba } from "@react-spring/shared";
 import { RsvpProvider } from "./context/RsvpContext";
+import Copyright from "./components/Copyright";
 
 const StyledCard = styled(Card)`
 	min-height: 100vh !important;
@@ -201,14 +202,18 @@ function App() {
 		setTimeout(() => setRenderSplashScreen(!renderSplashScreen), 2000);
 	}, []);
 
-	useEffect(() => {
+	useMemo(() => {
 		if (is_playing_music) {
 			music.play();
-		} else {
-			music.pause();
-			music.currentTime = 0;
 		}
-	}, [is_playing_music]);
+	}, []);
+
+	const handleMuteMusic = useCallback(
+		(play) => {
+			setIsPlayingMusic(play);
+		},
+		[is_playing_music]
+	);
 
 	const pos_section = useWindowPosition();
 
@@ -311,8 +316,8 @@ function App() {
 								Putra Kedua dari Bapak <b>Sutikno</b> dan Ibu <b>Nurjanah</b>
 							</p>
 							<p className="subtitle" style={{ textAlign: "right" }}>
-								Dk. Pendem RT02/RW06, Ds. Jarum, Kec. Bayat, Kab. Klaten, Jawa
-								Tengah
+								Dk. Tegalrejo RT 04/RW 06, Ds. Depok Kec.Kandeman Kabupaten
+								Batang, Jawa Tengah
 							</p>
 						</Grid.Column>
 						<Grid.Column mobile={8} computer={8} tablet={8}>
@@ -371,8 +376,7 @@ function App() {
 			{/* <GiftModal /> */}
 			<FloatingButton
 				onClick={(e) => {
-					e.preventDefault();
-					setIsPlayingMusic(!is_playing_music);
+					handleMuteMusic(!is_playing_music);
 				}}
 			>
 				<Icon
@@ -381,6 +385,7 @@ function App() {
 					color="white"
 				/>
 			</FloatingButton>
+			<Copyright />
 			{/* <BottomNav /> */}
 		</Container>
 	);
