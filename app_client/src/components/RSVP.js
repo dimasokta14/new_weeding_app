@@ -4,13 +4,8 @@ import Swal from "sweetalert2";
 import { Grid, Segment, Form, Button } from "semantic-ui-react";
 import { animated, useSpring } from "react-spring";
 
-import { connect } from "react-redux";
-import { createTamu } from "../actions/doc";
-import { useFirebase } from "react-redux-firebase";
-
 import bq from "../assets/bouquet.jpg";
 import FlowerGif from "../assets/tenor_fg.gif";
-import { Title } from "./Title";
 import Decor from "../assets/decor.svg";
 import GuestBookRecord from "./GuestBookRecord";
 import {
