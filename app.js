@@ -9,6 +9,7 @@ var config = require("./config");
 // routes
 // import authRoutes from "./routes/api/auth";
 var attenderRoutes = require("./routes/api/attender");
+var emailsubsRoutes = require("./routes/api/subscription");
 
 const { MONGO_URI, MONGO_DB_NAME } = config;
 
@@ -35,6 +36,7 @@ mongoose
 
 // Use Routes
 app.use("/api/attenders", attenderRoutes);
+app.use("/api/emailsubs", emailsubsRoutes);
 // app.use("/api/users", userRoutes);
 // app.use("/api/auth", authRoutes);
 
